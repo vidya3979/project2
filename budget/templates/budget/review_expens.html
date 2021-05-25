@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'budget/base.html' %}
+
+{% block body_block %}
+
+
+<form method="post">
+    {%csrf_token%}
+{{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+{%if total%}
+<label for="">Total amount: </label><h4 style="display:inline">{{total}}</h4>
+{% endif %}
+{% endblock %}
+
